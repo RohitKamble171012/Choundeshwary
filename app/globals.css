@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --ink: #0f0f0f;
+}
+
+html, body { background: #ffffff; color: #0f0f0f; -webkit-font-smoothing: antialiased; }
+
+::selection { background: #b91c1c; color: #fff; }
+
+.container-x { @apply mx-auto w-full max-w-[1400px] px-6 lg:px-12; }
+
+.headline {
+  font-family: var(--font-display), serif;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.28em] text-machinery font-semibold;
+}
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: #b91c1c; display: inline-block; }
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 bg-machinery text-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-ink;
+}
+.btn-ghost {
+  @apply inline-flex items-center gap-2 border border-white/30 text-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-white hover:text-ink;
+}
+.btn-dark {
+  @apply inline-flex items-center gap-2 bg-ink text-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-machinery;
+}
+
+.card-machine {
+  @apply relative overflow-hidden bg-soft border border-black/5 transition-all duration-500 hover:shadow-[0_30px_80px_-30px_rgba(0,0,0,0.45)];
+}
+.card-machine .img-wrap {
+  @apply relative aspect-[4/3] overflow-hidden bg-white flex items-center justify-center;
+}
+.card-machine img {
+  @apply h-full w-full object-contain p-6 transition-transform duration-700 group-hover:scale-105;
+}
+
+.divider-num {
+  @apply font-display text-machinery text-sm tracking-widest;
+}
+
+.noise::after {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
